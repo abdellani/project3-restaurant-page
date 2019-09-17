@@ -48,7 +48,6 @@ let menuItems = {
     }
   },
   "Drinks": {
-    "image": "",
     "items": {
       "Dish name 1": 10,
       "Dish name 2": 10,
@@ -61,7 +60,6 @@ let menuItems = {
     }
   },
   "Desserts": {
-    "image": "",
     "items": {
       "Dish name 1": 10,
       "Dish name 2": 10,
