@@ -90,10 +90,23 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log(\"This is a test !!\")\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _initial_page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initial-page-load */ \"./src/initial-page-load.js\");\n\n\nObject(_initial_page_load__WEBPACK_IMPORTED_MODULE_0__[\"initlize_page\"])()\ndocument.getElementById(\"menu\").addEventListener(\"click\",()=> console.log(\"menu clicked\"))\ndocument.getElementById(\"contact\").addEventListener(\"click\",()=> console.log(\"contact clicked\"))\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/initial-page-load.js":
+/*!**********************************!*\
+  !*** ./src/initial-page-load.js ***!
+  \**********************************/
+/*! exports provided: initlize_page */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"initlize_page\", function() { return initlize_page; });\nfunction initlize_page() {\n  document.getElementById(\"content\").innerHTML = `\n  <h1>Welcome !</h1>\n  <ul>\n    <li id=\"menu\">\n      Menu\n    </li>\n    <li id=\"contact\">\n      Contact\n    </li>\n  </ul>\n  `\n\n}\n\n\n//# sourceURL=webpack:///./src/initial-page-load.js?");
 
 /***/ })
 
