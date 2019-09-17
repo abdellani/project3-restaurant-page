@@ -1,0 +1,45 @@
+.navbar {
+  list-style: none;
+  display: flex;
+  margin-bottom:0px;
+}
+
+.navbar > li{
+  margin-bottom:0px;
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-bottom: none;
+  padding: 15px;
+}
+.navbar li:first-child{
+  border-right: none;  
+}
+
+#tab-content{
+  border: 1px solid black;
+  min-height: 150px;
+  padding: 25px;
+  margin-top: 0px; 
+  background-color: #ededed;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin: auto;
+}
+.menuList{
+  list-style: none;
+}
+.menuList li:first-child {
+  text-transform: uppercase;
+  text-decoration-line: underline;
+  margin-bottom: 10px;
+}
+.selected{
+  background-color: #ededed;
+}
+.menu-continer{
+  display: flex;
+}

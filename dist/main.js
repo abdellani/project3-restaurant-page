@@ -86,6 +86,30 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
+/*! exports provided: contact */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"contact\", function() { return contact; });\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./src/helpers.js\");\n\nfunction contact() { \n  document.getElementById(\"menu\").classList.remove(\"selected\")\n  document.getElementById(\"contact\").classList.add(\"selected\")\n  \n  let tabContent = document.getElementById(\"tab-content\")\n  tabContent.classList.remove(\"menu-continer\")\n\n  tabContent.innerHTML = \"\"\n  let form = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"form\")\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"label\", \"Email:\"))\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"input\"))\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"label\", \"Name:\"))\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"input\"))\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"label\", \"title:\"))\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"input\"))\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"label\", \"Content:\"))\n  form.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"textarea\"))\n  let submitButton = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"input\")\n  submitButton.setAttribute(\"value\", \"submit\")\n  submitButton.setAttribute(\"type\", \"submit\")\n  form.appendChild(submitButton)\n  tabContent.append(form)\n\n}\n\n\n\n//# sourceURL=webpack:///./src/contact.js?");
+
+/***/ }),
+
+/***/ "./src/helpers.js":
+/*!************************!*\
+  !*** ./src/helpers.js ***!
+  \************************/
+/*! exports provided: createElement */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createElement\", function() { return createElement; });\nfunction createElement(type, value = null) {\n  let node = document.createElement(type);\n  if (value !== null) {\n    let textNode = document.createTextNode(value);\n    node.appendChild(textNode);\n  }\n  return node\n}\n\n\n\n//# sourceURL=webpack:///./src/helpers.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -94,7 +118,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _initial_page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initial-page-load */ \"./src/initial-page-load.js\");\n\n\nObject(_initial_page_load__WEBPACK_IMPORTED_MODULE_0__[\"initlize_page\"])()\ndocument.getElementById(\"menu\").addEventListener(\"click\",()=> console.log(\"menu clicked\"))\ndocument.getElementById(\"contact\").addEventListener(\"click\",()=> console.log(\"contact clicked\"))\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _initial_page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initial-page-load */ \"./src/initial-page-load.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\nObject(_initial_page_load__WEBPACK_IMPORTED_MODULE_0__[\"initlize_page\"])()\ndocument.getElementById(\"menu\").addEventListener(\"click\",()=> Object(_menu__WEBPACK_IMPORTED_MODULE_1__[\"menu\"])())\ndocument.getElementById(\"contact\").addEventListener(\"click\",()=> Object(_contact__WEBPACK_IMPORTED_MODULE_2__[\"contact\"])())\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -106,7 +130,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ini
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"initlize_page\", function() { return initlize_page; });\nfunction initlize_page() {\n  document.getElementById(\"content\").innerHTML = `\n  <h1>Welcome !</h1>\n  <ul>\n    <li id=\"menu\">\n      Menu\n    </li>\n    <li id=\"contact\">\n      Contact\n    </li>\n  </ul>\n  `\n\n}\n\n\n//# sourceURL=webpack:///./src/initial-page-load.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"initlize_page\", function() { return initlize_page; });\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./src/helpers.js\");\n\n\nfunction initlize_page() {\n  let root = document.getElementById(\"content\")\n\n  root.innerHTML = '';\n  let h1Node = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"h1\", \"Welcome to the restaurant page !\");\n\n  let navbarElements = [\"menu\", \"contact\"]\n  let navbarElementsIDs = [\"menu\", \"contact\"]\n\n  let ulNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"ul\")\n \n  navbarElements.forEach((text, index) => {\n    let liNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"li\", text)\n    liNode.setAttribute(\"id\", navbarElementsIDs[index])\n    ulNode.appendChild(liNode)\n  })\n \n  ulNode.classList.add(\"navbar\")\n  \n  let divNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"div\")\n  divNode.setAttribute(\"id\", \"tab-content\")\n\n  root.appendChild(h1Node);\n  root.appendChild(ulNode);\n  root.appendChild(divNode)\n}\n\n\n//# sourceURL=webpack:///./src/initial-page-load.js?");
+
+/***/ }),
+
+/***/ "./src/menu.js":
+/*!*********************!*\
+  !*** ./src/menu.js ***!
+  \*********************/
+/*! exports provided: menu */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"menu\", function() { return menu; });\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./src/helpers.js\");\n\n\nfunction menu() {\n  document.getElementById(\"menu\").classList.add(\"selected\")\n  document.getElementById(\"contact\").classList.remove(\"selected\")\n  \n  let tabContent = document.getElementById(\"tab-content\")\n  tabContent.classList.add(\"menu-continer\")\n  \n  tabContent.innerHTML = \"\"\n  Object.keys(menuItems).forEach((subListe) => {\n    let ulNode = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"ul\");\n    ulNode.setAttribute(\"class\", \"menuList\")\n    ulNode.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"li\", subListe))\n    Object.keys(menuItems[subListe][\"items\"]).forEach(\n      (item) => {\n        ulNode.appendChild(Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"li\", `${item} : $ ${menuItems[subListe][\"items\"][item]}`))\n      }\n    )\n    tabContent.appendChild(ulNode)\n  })\n}\nlet menuItems = {\n  \"main dishes\": {\n    \"image\": \"\",\n    \"items\": {\n      \"Dish name 1\": 10,\n      \"Dish name 2\": 10,\n      \"Dish name 3\": 10,\n      \"Dish name 4\": 10,\n      \"Dish name 5\": 10,\n      \"Dish name 6\": 10,\n      \"Dish name 7\": 10,\n      \"Dish name 8\": 10,\n    }\n  },\n  \"Sides\": {\n    \"image\": \"\",\n    \"items\": {\n      \"Dish name 1\": 10,\n      \"Dish name 2\": 10,\n      \"Dish name 3\": 10,\n      \"Dish name 4\": 10,\n      \"Dish name 5\": 10,\n      \"Dish name 6\": 10,\n      \"Dish name 7\": 10,\n      \"Dish name 8\": 10,\n    }\n  },\n  \"Drinks\": {\n    \"image\": \"\",\n    \"items\": {\n      \"Dish name 1\": 10,\n      \"Dish name 2\": 10,\n      \"Dish name 3\": 10,\n      \"Dish name 4\": 10,\n      \"Dish name 5\": 10,\n      \"Dish name 6\": 10,\n      \"Dish name 7\": 10,\n      \"Dish name 8\": 10,\n    }\n  },\n  \"Desserts\": {\n    \"image\": \"\",\n    \"items\": {\n      \"Dish name 1\": 10,\n      \"Dish name 2\": 10,\n      \"Dish name 3\": 10,\n      \"Dish name 4\": 10,\n      \"Dish name 5\": 10,\n      \"Dish name 6\": 10,\n      \"Dish name 7\": 10,\n      \"Dish name 8\": 10,\n    }\n  }\n}\n\n\n\n//# sourceURL=webpack:///./src/menu.js?");
 
 /***/ })
 

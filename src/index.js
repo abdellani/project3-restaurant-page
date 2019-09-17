@@ -1,5 +1,6 @@
-import {initlize_page} from "./initial-page-load"
-
+import {initlize_page} from "./initial-page-load";
+import {menu} from "./menu";
+import {contact} from "./contact";
 initlize_page()
-document.getElementById("menu").addEventListener("click",()=> console.log("menu clicked"))
-document.getElementById("contact").addEventListener("click",()=> console.log("contact clicked"))
+document.getElementById("menu").addEventListener("click",()=> menu())
+document.getElementById("contact").addEventListener("click",()=> contact())
