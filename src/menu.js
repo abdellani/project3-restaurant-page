@@ -51,7 +51,7 @@ const menuItems = {
   },
 };
 
-function menu() {
+const menu = () => {
   document.getElementById('menu').classList.add('selected');
   document.getElementById('contact').classList.remove('selected');
 
@@ -70,6 +70,6 @@ function menu() {
     );
     tabContent.appendChild(ulNode);
   });
-}
+};
 
 export default menu;

@@ -1,6 +1,6 @@
 import createElement from './helpers';
 
-function contact() {
+const contact = () => {
   document.getElementById('menu').classList.remove('selected');
   document.getElementById('contact').classList.add('selected');
 
@@ -22,6 +22,6 @@ function contact() {
   submitButton.setAttribute('type', 'submit');
   form.appendChild(submitButton);
   tabContent.append(form);
-}
+};
 
 export default contact;

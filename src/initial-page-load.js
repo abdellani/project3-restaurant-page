@@ -1,6 +1,6 @@
 import createElement from './helpers';
 
-function initlizePage() {
+const initlizePage = () => {
   const root = document.getElementById('content');
 
   root.innerHTML = '';
@@ -25,5 +25,5 @@ function initlizePage() {
   root.appendChild(h1Node);
   root.appendChild(ulNode);
   root.appendChild(divNode);
-}
+};
 export default initlizePage;
